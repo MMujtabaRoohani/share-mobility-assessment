@@ -1,0 +1,39 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Render Results</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" language="javascript">
+		$(document).ready(function () {
+			$.getJSON('http://localhost:3000/messages/chat/3', function (json) {
+        $('#1').html('<pre> ' + JSON.stringify(json, null, 2) + '</pre>');
+      });
+      $.getJSON('http://localhost:3000/messages/chat/8', function (json) {
+        $('#2').html('<pre> ' + JSON.stringify(json, null, 2) + '</pre>');
+      });
+      $.getJSON('http://localhost:3000/users/100', function (json) {
+        $('#3').html('<pre> ' + JSON.stringify(json, null, 2) + '</pre>');
+      });
+      $.getJSON('http://localhost:3000/messages/459', function (json) {
+        $('#4').html('<pre> ' + JSON.stringify(json, null, 2) + '</pre>');
+      });
+		});
+	</script>
+</head>
+
+<body>
+    <h1>Echo Messages for Chat ID = 3 Here as HTML</h1>
+    <div id="1"></div>
+
+    <h1>Render Messages for Chat ID = 8 Here as JSON</h1>
+    <div id="2"></div>
+
+    <h1>Render User ID = 100 Here as JSON</h1>
+    <div id="3"></div>
+    
+    <h1>Echo Message ID = 459 Here as HTML</h1>
+    <div id="4"></div>
+</body>
+</html>
